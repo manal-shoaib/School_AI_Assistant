@@ -53,13 +53,32 @@ def inject_branding():
     st.markdown(
         f"""
         <style>
+            /* Main background */
             .stApp {{
                 background-color: #FAFBFC;
             }}
+            
+            /* Sidebar Styling - Dark Theme Fix */
             [data-testid="stSidebar"] {{
-                background-color: {ACCENT_LIGHT};
-                border-right: 1px solid #D8E2EC;
+                background-color: #111827 !important;
+                border-right: 1px solid #1F2937 !important;
             }}
+            
+            /* Sidebar Text & Labels */
+            [data-testid="stSidebar"] h1, 
+            [data-testid="stSidebar"] h2, 
+            [data-testid="stSidebar"] h3, 
+            [data-testid="stSidebar"] label, 
+            [data-testid="stSidebar"] span {{
+                color: #FFFFFF !important;
+            }}
+            
+            /* Sidebar Captions and Secondary Text */
+            [data-testid="stSidebar"] [data-testid="stCaptionContainer"],
+            [data-testid="stSidebar"] p {{
+                color: #9CA3AF !important;
+            }}
+
             .app-header {{
                 display: flex;
                 align-items: center;
@@ -70,13 +89,13 @@ def inject_branding():
                 margin-bottom: 1.25rem;
             }}
             .app-header h1 {{
-                color: white;
+                color: white !important;
                 font-size: 1.4rem;
                 margin: 0;
                 font-weight: 600;
             }}
             .app-header p {{
-                color: #DCE8F5;
+                color: #DCE8F5 !important;
                 margin: 0;
                 font-size: 0.85rem;
             }}
