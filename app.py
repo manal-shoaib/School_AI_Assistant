@@ -56,9 +56,21 @@ def inject_branding():
             /* Main background */
             .stApp {{
                 background-color: #FAFBFC;
+                color: #111827 !important;
             }}
             
-            /* Sidebar Styling - Dark Theme Fix */
+            /* Fix invisible text in chat messages */
+            .stChatMessage, .stChatMessage p, .stChatMessage div, [data-testid="stChatMessageContent"] {{
+                color: #111827 !important;
+            }}
+
+            /* Clear background for chat containers */
+            [data-testid="stChatMessage"] {{
+                background-color: #F3F4F6 !important;
+                border-radius: 10px;
+            }}
+            
+            /* Sidebar Styling - Dark Theme */
             [data-testid="stSidebar"] {{
                 background-color: #111827 !important;
                 border-right: 1px solid #1F2937 !important;
@@ -73,12 +85,13 @@ def inject_branding():
                 color: #FFFFFF !important;
             }}
             
-            /* Sidebar Captions and Secondary Text */
+            /* Sidebar Captions */
             [data-testid="stSidebar"] [data-testid="stCaptionContainer"],
             [data-testid="stSidebar"] p {{
                 color: #9CA3AF !important;
             }}
 
+            /* Header Styling */
             .app-header {{
                 display: flex;
                 align-items: center;
@@ -108,9 +121,6 @@ def inject_branding():
                 padding: 2px 10px;
                 margin: 2px 4px 0 0;
                 font-size: 0.75rem;
-            }}
-            .stChatMessage {{
-                border-radius: 10px;
             }}
         </style>
         """,
